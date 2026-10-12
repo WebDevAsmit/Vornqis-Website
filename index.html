@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VORNQIS RESEARCH & INSIGHTS | Turning Data Into Meaningful Insights</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Modern Corporate Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            vq: {
+              pitch: '#05070B',
+              slate: '#080D18',
+              card: '#0D1526',
+              cardHover: '#131E35',
+              surface: '#152139',
+              border: '#1E2D4A',
+              borderLight: '#2A3F66',
+              cyan: '#00F2FE',
+              teal: '#00D2D3',
+              glow: 'rgba(0, 242, 254, 0.35)',
+              metallic: '#CAD5E2',
+              steel: '#8695AA',
+              muted: '#52627A',
+              accentEmerald: '#10B981'
+            }
+          },
+          boxShadow: {
+            'glow-cyan': '0 0 35px rgba(0, 242, 254, 0.28)',
+            'glow-cyan-sm': '0 0 16px rgba(0, 242, 254, 0.2)',
+            'card-glass': '0 12px 36px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Sleek Dark Scrollbar */
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: #05070B; }
+    ::-webkit-scrollbar-thumb { background: #1E2D4A; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #00F2FE; }
+
+    .glass-header {
+      background: rgba(8, 13, 24, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-panel {
+      background: rgba(13, 21, 38, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .chrome-heading {
+      background: linear-gradient(180deg, #FFFFFF 10%, #E2E8F0 50%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cyan-gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 0%, #00F2FE 55%, #00B4D8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .interactive-card {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .interactive-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 242, 254, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(0, 242, 254, 0.16);
+    }
+  </style>
+</head>
+<body class="bg-vq-pitch text-slate-100 font-sans antialiased selection:bg-vq-cyan selection:text-black overflow-x-hidden">
+
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-header" id="siteHeader">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- VORNQIS Brand Identity & Logo Mark -->
+        <a href="#hero" class="flex items-center gap-3.5 group cursor-pointer focus:outline-none">
+          <div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center">
+            <div class="absolute inset-0 bg-vq-cyan/20 rounded-xl blur-md group-hover:bg-vq-cyan/40 transition-all"></div>
+            <!-- Custom Vector Recreation of the Selected Logo -->
+            <svg class="w-11 h-11 relative z-10 drop-shadow-[0_0_10px_rgba(0,242,254,0.7)]" viewBox="0 0 100 100" fill="none">
+              <defs>
+                <linearGradient id="headerCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00F2FE" />
+                  <stop offset="100%" stop-color="#0083B0" />
+                </linearGradient>
+                <linearGradient id="headerSilver" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="100%" stop-color="#94A3B8" />
+                </linearGradient>
+              </defs>
+              <!-- Bar Chart Elements -->
+              <rect x="25" y="48" width="8" height="26" rx="2" fill="url(#headerCyan)" opacity="0.9"/>
+              <rect x="42" y="34" width="8.5" height="40" rx="2" fill="url(#headerSilver)"/>
+              <rect x="59" y="20" width="8.5" height="54" rx="2" fill="url(#headerSilver)"/>
+              <circle cx="63.2" cy="28" r="2.8" fill="#00F2FE" />
+              <!-- Stylized Monogram V Envelope -->
+              <path d="M 18 36 L 47 88 C 48.5 90.5 52.5 90.5 54 88 L 76 46" stroke="url(#headerCyan)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 52 87 L 68 56" stroke="url(#headerSilver)" stroke-width="5" stroke-linecap="round"/>
+              <!-- Surge Arrow Wave -->
+              <path d="M 22 66 Q 38 48 54 62 T 84 27" fill="none" stroke="url(#headerCyan)" stroke-width="5.2" stroke-linecap="round"/>
+              <polygon points="84,21 89,33 76,28" fill="#00F2FE"/>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl sm:text-2xl font-extrabold tracking-[0.18em] uppercase chrome-heading font-display leading-none">
+              VORNQIS
+            </span>
+            <span class="text-[9px] sm:text-[10px] tracking-[0.24em] font-bold text-vq-cyan uppercase mt-1">
+              RESEARCH & INSIGHTS
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-slate-300">
+          <a href="#solutions" class="hover:text-vq-cyan transition-colors">Solutions</a>
+          <a href="#methodology" class="hover:text-vq-cyan transition-colors">Methodology</a>
+          <a href="#feasibility" class="hover:text-vq-cyan transition-colors">Feasibility Engine</a>
+          <a href="#quality" class="hover:text-vq-cyan transition-colors">Quality Assurance</a>
+          <a href="#verticals" class="hover:text-vq-cyan transition-colors">Industries</a>
+          <a href="#warroom" class="hover:text-vq-cyan transition-colors">Intelligence Deck</a>
+        </nav>
+
+        <!-- Direct Phone & Action CTA -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="tel:8700291392" class="flex items-center gap-2 text-xs font-mono text-vq-metallic hover:text-vq-cyan transition-colors">
+            <svg class="w-3.5 h-3.5 text-vq-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +91 8700291392
+          </a>
+          <button onclick="openModal()" class="px-5 py-2.5 text-xs uppercase tracking-wider font-bold rounded-lg bg-gradient-to-r from-vq-cyan to-vq-teal text-vq-pitch hover:shadow-glow-cyan transition-all duration-300 active:scale-95">
+            Submit Brief
+          </button>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="lg:hidden text-slate-300 hover:text-white p-2 rounded-lg bg-white/5">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobileMenu" class="hidden lg:hidden px-4 pt-3 pb-6 space-y-3 bg-vq-slate/95 border-t border-vq-border rounded-b-2xl">
+        <a href="#solutions" class="block py-2 text-sm text-slate-200 hover:text-vq-cyan">Solutions</a>
+        <a href="#audiences" class="block py-2 text-sm text-slate-200 hover:text-vq-cyan">B2B & B2C Audiences</a>
+        <a href="#methodology" class="block py-2 text-sm text-slate-200 hover:text-vq-cyan">Methodology</a>
+        <a href="#feasibility" class="block py-2 text-sm text-slate-200 hover:text-vq-cyan">Feasibility Engine</a>
+        <a href="#quality" class="block py-2 text-sm text-slate-200 hover:text-vq-cyan">Quality Assurance</a>
+        <a href="#verticals" class="block py-2 text-sm text-slate-200 hover:text-vq-cyan">Industries</a>
+        <a href="tel:8700291392" class="block py-2 text-sm font-mono text-vq-cyan font-bold">Call: +91 8700291392</a>
+        <a href="mailto:vornqis@gmail.com" class="block py-2 text-xs font-mono text-vq-steel">Email: contact@vornqis.com</a>
+        <button onclick="openModal()" class="w-full mt-2 py-3 text-center text-xs uppercase tracking-wider font-bold rounded-lg bg-vq-cyan text-vq-pitch">Submit Research Brief</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <section id="hero" class="relative min-h-[92vh] flex flex-col justify-center items-center py-24 overflow-hidden">
+      <!-- Background Radiance Effects -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-15%,rgba(0,242,254,0.18),transparent)] pointer-events-none"></div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-vq-teal/10 rounded-full blur-[140px] pointer-events-none"></div>
+      
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-vq-slate/90 border border-vq-cyan/35 shadow-glow-cyan-sm mb-8">
+          <span class="w-2 h-2 rounded-full bg-vq-cyan animate-ping"></span>
+          <span class="text-xs uppercase tracking-[0.2em] font-bold text-vq-cyan font-mono">
+            GLOBAL DATA INTELLIGENCE & AUDIENCE SAMPLING
+          </span>
+        </div>
+
+        <!-- Master Title -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6">
+          Decoding Human Signals.<br>
+          <span class="cyan-gradient-text">Accelerating Strategic Decisions.</span>
+        </h1>
+
+        <!-- Subtitle & Brand Tagline -->
+        <p class="text-base sm:text-lg lg:text-xl text-vq-metallic max-w-3xl mx-auto leading-relaxed font-normal mb-10">
+          VORNQIS Research & Insights fuses rigorous quantitative fieldwork, deep qualitative inquiry, and predictive analytics to empower global enterprises.
+          <span class="block mt-2 text-xs sm:text-sm font-mono tracking-widest text-vq-teal uppercase font-semibold">
+            Turning Data Into Meaningful Insights
+          </span>
+        </p>
+
+        <!-- Primary Action Triggers -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest bg-gradient-to-r from-vq-cyan to-vq-teal text-vq-pitch hover:shadow-glow-cyan transition-all transform hover:-translate-y-0.5">
+            Initiate Research Brief
+          </a>
+          <a href="https://wa.me/918700291392?text=Hello%20VORNQIS%20Team,%20I%20would%20like%20to%20discuss%20a%20research%20project." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest text-slate-200 glass-panel hover:text-white hover:border-vq-cyan/50 transition-all flex items-center justify-center gap-2.5">
+            <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+            Instant WhatsApp Desk
+          </a>
+        </div>
+
+        <!-- 3 Interactive Hero KPI Badges -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+          <div class="glass-panel p-5 rounded-2xl border border-vq-border flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-vq-cyan/15 flex items-center justify-center text-vq-cyan flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold font-display text-white">99.4%</div>
+              <div class="text-xs text-vq-steel">Data Quality Integrity Rating</div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-5 rounded-2xl border border-vq-border flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-vq-teal/15 flex items-center justify-center text-vq-teal flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold font-display text-white">4.2M+</div>
+              <div class="text-xs text-vq-steel">Verified B2B & B2C Panel Network</div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-5 rounded-2xl border border-vq-border flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/15 flex items-center justify-center text-blue-400 flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="text-left">
+              <div class="text-2xl font-bold font-display text-white">&lt; 24h</div>
+              <div class="text-xs text-vq-steel">Global Feasibility Turnaround</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- B2B & B2C AUDIENCE ARCHITECTURE SECTION -->
+    <section id="audiences" class="py-24 relative bg-vq-pitch border-t border-vq-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-xs uppercase tracking-widest text-vq-cyan font-mono font-bold mb-2">Audience Depth & Diversity</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+            Comprehensive B2B Stakeholders & Global B2C Consumers
+          </h2>
+          <p class="text-vq-metallic text-sm sm:text-base leading-relaxed">
+            Whether speaking to high-barrier commercial executives or representative consumer households across 50+ countries, VORNQIS delivers statistically balanced, verified respondents.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- B2B Audience Card -->
+          <div class="glass-panel p-8 rounded-3xl border border-vq-cyan/30 shadow-card-glass relative overflow-hidden group">
+            <div class="absolute -top-16 -right-16 w-44 h-44 bg-vq-cyan/10 rounded-full blur-3xl group-hover:bg-vq-cyan/20 transition-all"></div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-full bg-vq-cyan/15 text-vq-cyan text-xs font-mono font-bold tracking-wider">
+                B2B ENTERPRISE AUDIENCES
+              </span>
+              <span class="text-xs font-mono text-vq-steel">High-Incidence Niche Panels</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Executive & Professional Decision-Makers</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Double-blinded access to hard-to-reach industry leaders, procurement specialists, and specialized practitioners.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-vq-metallic">
+              <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                <span class="text-vq-cyan font-bold block mb-1">C-Suite & SVPs</span>
+                <span>CEOs, CFOs, CIOs, CTOs & Board Directors</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                <span class="text-vq-cyan font-bold block mb-1">Healthcare & Life Sciences</span>
+                <span>Specialist MDs, Hospital Procurement & KOLs</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                <span class="text-vq-cyan font-bold block mb-1">IT & Software Buyers</span>
+                <span>DevOps Leads, Cloud Architects & Security Execs</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                <span class="text-vq-cyan font-bold block mb-1">Financial Gatekeepers</span>
+                <span>Portfolio Managers, PE Partners & M&A Teams</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- B2C Audience Card -->
+          <div class="glass-panel p-8 rounded-3xl border border-vq-teal/30 shadow-card-glass relative overflow-hidden group">
+            <div class="absolute -top-16 -right-16 w-44 h-44 bg-vq-teal/10 rounded-full blur-3xl group-hover:bg-vq-teal/20 transition-all"></div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-full bg-vq-teal/15 text-vq-teal text-xs font-mono font-bold tracking-wider">
+                B2C CONSUMER PANELS
+              </span>
+              <span class="text-xs font-mono text-vq-steel">Representative & Micro-Targeted</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Global Shoppers, Households & Cohorts</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Granular census-balanced or deeply segmented consumer cohorts across demographics, psychographics, and spend behaviors.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-vq-metallic">
+              <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                <span class="text-vq-teal font-bold block mb-1">Household Primary Shoppers</span>
+                <span>Grocery, FMCG, electronics, & subscription decision-makers</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                <span class="text-vq-teal font-bold block mb-1">Gen Z & Millennial Cohorts</span>
+                <span>Digital native behavioral patterns, social trends & creator economy</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                <span class="text-vq-teal font-bold block mb-1">High-Net-Worth Consumers</span>
+                <span>Luxury lifestyle, wealth management & private banking users</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                <span class="text-vq-teal font-bold block mb-1">Automotive & Home Owners</span>
+                <span>EV adopters, homeowners, mortgage holders & property seekers</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="feasibility" class="py-24 relative bg-vq-pitch border-t border-vq-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-vq-cyan/10 border border-vq-cyan/30 text-vq-cyan text-xs font-mono font-semibold">
+              REAL-TIME SAMPLING CALIBRATOR
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
+              Test Sample Feasibility & Quotas Instantly.
+            </h2>
+            <p class="text-vq-metallic text-sm sm:text-base leading-relaxed">
+              Calculate projected turnaround times, confidence levels, and margin of error based on your target demographic incidence and quota scope.
+            </p>
+            <div class="p-4 rounded-xl bg-vq-slate border border-vq-border text-xs space-y-2">
+              <div class="text-white font-bold flex items-center gap-2">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Direct Access to Dedicated Research Lead
+              </div>
+              <p class="text-vq-steel">
+                Have a niche B2B or clinical sample? Contact our feasibility desk directly via phone at <a href="tel:8700291392" class="text-vq-cyan font-bold underline">+91 8700291392</a>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Interactive Engine Card -->
+          <div class="lg:col-span-7">
+            <div class="glass-panel p-7 sm:p-9 rounded-3xl border border-vq-cyan/30 shadow-card-glass space-y-6">
+              
+              <!-- Cohort Selector Buttons -->
+              <div>
+                <label class="block text-xs uppercase font-mono tracking-wider text-vq-steel mb-2.5">1. Target Audience Archetype</label>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2" id="audienceSelector">
+                  <button type="button" onclick="setAudience('csuite', this)" class="audience-btn active px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-vq-cyan text-vq-pitch border border-vq-cyan transition-all text-center">
+                    C-Suite / B2B
+                  </button>
+                  <button type="button" onclick="setAudience('hcp', this)" class="audience-btn px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-vq-card text-slate-300 border border-vq-border hover:border-vq-cyan/40 transition-all text-center">
+                    Healthcare / HCP
+                  </button>
+                  <button type="button" onclick="setAudience('tech', this)" class="audience-btn px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-vq-card text-slate-300 border border-vq-border hover:border-vq-cyan/40 transition-all text-center">
+                    Tech & SaaS
+                  </button>
+                  <button type="button" onclick="setAudience('b2c', this)" class="audience-btn px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-vq-card text-slate-300 border border-vq-border hover:border-vq-cyan/40 transition-all text-center">
+                    B2C / General Consumer
+                  </button>
+                  <button type="button" onclick="setAudience('genz', this)" class="audience-btn px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-vq-card text-slate-300 border border-vq-border hover:border-vq-cyan/40 transition-all text-center">
+                    Gen-Z & Millennial
+                  </button>
+                </div>
+              </div>
+
+              <!-- Sample Slider -->
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label class="text-xs uppercase font-mono tracking-wider text-vq-steel">2. Target Sample Size (N)</label>
+                  <span id="sampleDisplay" class="text-xl font-bold font-mono text-vq-cyan">1,000 Completes</span>
+                </div>
+                <input id="sampleSlider" type="range" min="100" max="5000" step="50" value="1000" class="w-full h-2 bg-vq-slate rounded-lg appearance-none cursor-pointer accent-vq-cyan">
+                <div class="flex justify-between text-[10px] text-vq-muted font-mono mt-1">
+                  <span>N=100 (Pilot)</span>
+                  <span>N=1,000 (Standard)</span>
+                  <span>N=5,000+ (Global Census)</span>
+                </div>
+              </div>
+
+              <!-- Projected Stats Output -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3">
+                <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                  <span class="text-[10px] text-vq-steel block font-mono">Confidence Level</span>
+                  <span class="text-lg font-bold text-white font-display">95% Standard</span>
+                  <span class="text-[9px] text-vq-steel block mt-0.5">Gaussian bell</span>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                  <span class="text-[10px] text-vq-steel block font-mono">Margin of Error</span>
+                  <span id="moeDisplay" class="text-lg font-bold text-vq-cyan font-mono">±3.1%</span>
+                  <span class="text-[9px] text-vq-steel block mt-0.5">Stat precision</span>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                  <span class="text-[10px] text-vq-steel block font-mono">Estimated Turnaround</span>
+                  <span id="turnaroundDisplay" class="text-lg font-bold text-vq-teal font-display">4 - 6 Days</span>
+                  <span class="text-[9px] text-vq-accentEmerald block mt-0.5">Field pacing</span>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-vq-slate border border-vq-border">
+                  <span class="text-[10px] text-vq-steel block font-mono">Feasibility Index</span>
+                  <span id="feasibilityScore" class="text-lg font-bold text-emerald-400 font-mono">98/100</span>
+                  <span class="text-[9px] text-vq-steel block mt-0.5">High panel velocity</span>
+                </div>
+              </div>
+
+              <!-- Feasibility CTA bar -->
+              <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="text-xs text-slate-400">
+                  Incidence Rate (IR): <span id="irDisplay" class="text-white font-bold font-mono">10% - 14% (Specialized B2B)</span>
+                </div>
+                <button onclick="openModal()" class="w-full sm:w-auto px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-white text-vq-pitch hover:bg-vq-cyan transition-all">
+                  Lock In Quota
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="quality" class="py-24 relative bg-vq-slate border-t border-vq-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-xs uppercase tracking-widest text-vq-cyan font-mono font-bold mb-2">Integrity First</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+            The VORNQIS Quality Standard.
+          </h2>
+          <p class="text-vq-metallic text-sm sm:text-base leading-relaxed">
+            In an era of synthetic bots and polluted data panels, our 4-tier cryptographic respondent verification guarantees pristine datasets.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="glass-panel p-6 rounded-2xl border border-vq-border">
+            <div class="w-10 h-10 rounded-lg bg-vq-cyan/15 text-vq-cyan flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 004 11a7.962 7.962 0 001.378 4.545"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Digital Fingerprinting</h3>
+            <p class="text-vq-steel text-xs leading-relaxed">
+              Hardware-level hash verification prevents respondent duplication across multi-source vendor routing.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-vq-border">
+            <div class="w-10 h-10 rounded-lg bg-vq-teal/15 text-vq-teal flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">Bot & AI Scrubbers</h3>
+            <p class="text-vq-steel text-xs leading-relaxed">
+              Real-time heuristic evaluation catches GPT-generated responses, open-ended gibberish, and speeders.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-vq-border">
+            <div class="w-10 h-10 rounded-lg bg-blue-500/15 text-blue-400 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">IP & Geofence Validation</h3>
+            <p class="text-vq-steel text-xs leading-relaxed">
+              Strict proxy and VPN suppression ensures each response strictly originates from the contracted market.
+            </p>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border border-vq-border">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-base font-bold text-white mb-2">ISO 20252 & ESOMAR</h3>
+            <p class="text-vq-steel text-xs leading-relaxed">
+              Full compliance with international market research standards, respondent privacy, and GDPR regulations.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="verticals" class="py-24 relative bg-vq-pitch border-t border-vq-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <p class="text-xs uppercase tracking-widest text-vq-cyan font-mono font-bold mb-2">Sectors & Domains</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+            Vertical Specialization Where Stakes Are High.
+          </h2>
+          <p class="text-vq-metallic text-sm sm:text-base leading-relaxed">
+            Deep context matters. Our sector leads bring specialized domain literacy to every questionnaire design.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="glass-panel p-7 rounded-2xl border border-vq-border hover:border-vq-cyan/40 transition-all">
+            <div class="text-vq-cyan text-xs font-mono font-bold mb-2">ENTERPRISE CLOUD</div>
+            <h3 class="text-xl font-bold text-white mb-2">Enterprise Tech & SaaS</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Buyer enablement journeys, software displacement triggers, feature prioritization, and developer ecosystem sentiment.
+            </p>
+          </div>
+
+          <div class="glass-panel p-7 rounded-2xl border border-vq-border hover:border-vq-teal/40 transition-all">
+            <div class="text-vq-teal text-xs font-mono font-bold mb-2">LIFE SCIENCES</div>
+            <h3 class="text-xl font-bold text-white mb-2">Healthcare & Biopharma</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              KOL mapping, therapy adoption curves, treatment paradigm shifts, hospital procurement committees, and payer dynamics.
+            </p>
+          </div>
+
+          <div class="glass-panel p-7 rounded-2xl border border-vq-border hover:border-blue-400/40 transition-all">
+            <div class="text-blue-400 text-xs font-mono font-bold mb-2">CAPITAL ALLOCATION</div>
+            <h3 class="text-xl font-bold text-white mb-2">Private Equity & Due Diligence</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Rapid commercial due diligence (CDD), customer retention cohorts, churn audit, and competitor moat evaluation under tight M&A timelines.
+            </p>
+          </div>
+
+          <div class="glass-panel p-7 rounded-2xl border border-vq-border hover:border-emerald-400/40 transition-all">
+            <div class="text-emerald-400 text-xs font-mono font-bold mb-2">COMMERCE & FMCG</div>
+            <h3 class="text-xl font-bold text-white mb-2">Retail & Consumer Goods</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Omnichannel shopper behavior, packaging testing, shelf impact analysis, price elasticity, and basket share dynamics.
+            </p>
+          </div>
+
+          <div class="glass-panel p-7 rounded-2xl border border-vq-border hover:border-amber-400/40 transition-all">
+            <div class="text-amber-400 text-xs font-mono font-bold mb-2">FINANCIAL ECOSYSTEMS</div>
+            <h3 class="text-xl font-bold text-white mb-2">FinTech & Banking</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Digital banking UX benchmarking, institutional investor outlook, payment gateway adoption, and wealth advisory expectations.
+            </p>
+          </div>
+
+          <div class="glass-panel p-7 rounded-2xl border border-vq-border hover:border-purple-400/40 transition-all">
+            <div class="text-purple-400 text-xs font-mono font-bold mb-2">FUTURE MOBILITY</div>
+            <h3 class="text-xl font-bold text-white mb-2">Clean Energy & EV Mobility</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Commercial fleet electrification, renewable infrastructure appetite, micro-mobility trends, and regulatory impact assessments.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="warroom" class="py-24 relative bg-vq-slate border-t border-vq-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-vq-cyan/10 border border-vq-cyan/30 text-vq-cyan text-xs font-mono font-semibold">
+              SYNTHESIS WAR-ROOM
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
+              Actionable Intelligence, Not Bloated Reports.
+            </h2>
+            <p class="text-vq-metallic text-sm sm:text-base leading-relaxed">
+              Executive decisions demand instant visual clarity. We synthesize raw fieldwork into active live portals, scenario simulators, and board-ready decks.
+            </p>
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center gap-3 text-xs text-slate-300">
+                <span class="w-1.5 h-1.5 rounded-full bg-vq-cyan"></span>
+                Instant Crosstab Filtering by Geography & Seniority
+              </div>
+              <div class="flex items-center gap-3 text-xs text-slate-300">
+                <span class="w-1.5 h-1.5 rounded-full bg-vq-cyan"></span>
+                Automated Significance Testing (p &lt; 0.05)
+              </div>
+              <div class="flex items-center gap-3 text-xs text-slate-300">
+                <span class="w-1.5 h-1.5 rounded-full bg-vq-cyan"></span>
+                Export to Native PowerPoint, SPSS & Clean Raw CSV
+              </div>
+            </div>
+            <div class="pt-2">
+              <button onclick="openModal()" class="px-6 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-vq-cyan to-vq-teal text-vq-pitch hover:shadow-glow-cyan transition-all">
+                Request Deck Demonstration
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Dashboard View -->
+          <div class="lg:col-span-7">
+            <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-vq-cyan/30 shadow-card-glass">
+              
+              <div class="flex items-center justify-between pb-4 border-b border-vq-border">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-lg bg-vq-cyan/20 border border-vq-cyan/40 flex items-center justify-center text-vq-cyan font-bold font-mono text-xs">VQ</div>
+                  <div>
+                    <h4 class="text-sm font-bold text-white">VORNQIS Strategic Cross-Tab Deck</h4>
+                    <p class="text-[11px] text-vq-steel">Global Enterprise Buyer Migration Index</p>
+                  </div>
+                </div>
+                <span class="text-xs font-mono text-emerald-400 font-semibold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  N=1,420 Verified
+                </span>
+              </div>
+
+              <!-- Interactive Tabs -->
+              <div class="flex items-center gap-2 my-5">
+                <button onclick="switchTab('pricing', this)" class="sim-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-vq-cyan text-vq-pitch border border-vq-cyan transition-all">
+                  Pricing Elasticity
+                </button>
+                <button onclick="switchTab('adoption', this)" class="sim-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-vq-pitch text-slate-400 border border-vq-border hover:text-white transition-all">
+                  Adoption Hurdles
+                </button>
+                <button onclick="switchTab('competitor', this)" class="sim-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-vq-pitch text-slate-400 border border-vq-border hover:text-white transition-all">
+                  Competitor Moat
+                </button>
+              </div>
+
+              <div id="simContent" class="space-y-4">
+                <div class="bg-vq-pitch/80 p-5 rounded-2xl border border-vq-border space-y-3">
+                  <div class="flex justify-between text-xs">
+                    <span class="text-slate-300">Optimum Price-Point Acceptance (OPP)</span>
+                    <span class="text-vq-cyan font-bold font-mono">$1,450 / node / yr</span>
+                  </div>
+                  <div class="w-full bg-slate-900 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-vq-cyan to-vq-teal h-full rounded-full transition-all duration-500" style="width: 78%"></div>
+                  </div>
+                  <div class="flex justify-between text-[11px] text-vq-steel font-mono">
+                    <span>Point of Marginal Cheapness: $850</span>
+                    <span>Point of Marginal Expensiveness: $2,100</span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="bg-vq-pitch/80 p-4 rounded-xl border border-vq-border">
+                    <span class="text-[11px] text-vq-steel block font-mono">Revenue Optimization</span>
+                    <span class="text-2xl font-bold font-display text-white">+28.4%</span>
+                    <span class="text-[10px] text-emerald-400 block mt-1">At $1,450 subscription tier</span>
+                  </div>
+                  <div class="bg-vq-pitch/80 p-4 rounded-xl border border-vq-border">
+                    <span class="text-[11px] text-vq-steel block font-mono">Elasticity Coefficient</span>
+                    <span class="text-2xl font-bold font-display text-vq-cyan">-0.42</span>
+                    <span class="text-[10px] text-vq-steel block mt-1">Inelastic enterprise core</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-vq-border flex items-center justify-between text-xs">
+                <span class="text-vq-steel">Delivered as: Interactive Web Deck + Executive Board PDF</span>
+                <span class="text-vq-cyan font-mono font-semibold">100% Client-Owned</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="py-24 relative bg-vq-pitch border-t border-vq-border">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="text-xs uppercase tracking-widest text-vq-cyan font-mono font-bold mb-2">Connect Directly</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+            Have a Research Question?
+          </h2>
+          <p class="text-vq-metallic text-sm sm:text-base leading-relaxed">
+            Tell us your target audience, markets, and decision goals. We will provide methodology recommendations, pricing, and feasibility within hours.
+          </p>
+        </div>
+
+        <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-vq-cyan/40 shadow-glow-cyan-sm">
+          
+          <form id="mainContactForm" onsubmit="handleContactSubmit(event)" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider mb-2">Full Name</label>
+                <input required type="text" placeholder="e.g. Rachel Foster" class="w-full bg-vq-slate border border-vq-border rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-vq-cyan">
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider mb-2">Corporate Email</label>
+                <input required type="email" placeholder="e.g. rfoster@enterprise.com" class="w-full bg-vq-slate border border-vq-border rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-vq-cyan">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider mb-2">Organization</label>
+                <input required type="text" placeholder="e.g. Apex Global Advisors" class="w-full bg-vq-slate border border-vq-border rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-vq-cyan">
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider mb-2">Research Scope</label>
+                <select class="w-full bg-vq-slate border border-vq-border rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-vq-cyan">
+                  <option>Quantitative Survey & Sampling</option>
+                  <option>Qualitative In-Depth Interviews (IDIs)</option>
+                  <option>Commercial Due Diligence (CDD)</option>
+                  <option>Full-Service Market Research</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono font-semibold text-slate-300 uppercase tracking-wider mb-2">Research Objectives & Sample Parameters</label>
+              <textarea required rows="4" placeholder="Briefly specify your target respondents (e.g. 500 CIOs in North America & Europe), methodology preferences, and project timeline..." class="w-full bg-vq-slate border border-vq-border rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none focus:border-vq-cyan"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-widest bg-gradient-to-r from-vq-cyan to-vq-teal text-vq-pitch hover:shadow-glow-cyan transition-all duration-300 active:scale-[0.99]">
+              Submit Inquiry to Research Desk
+            </button>
+
+            <div id="contactFormAlert" class="hidden p-4 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-center text-xs font-mono">
+              ✓ Research inquiry dispatched to desk at contact@vornqis.com. An Insights Director will contact you shortly.
+            </div>
+          </form>
+
+          <!-- Direct Phone & WhatsApp Channels with user's verified contact numbers -->
+          <div class="mt-10 pt-8 border-t border-vq-border grid grid-cols-1 sm:grid-cols-3 gap-4">
+            
+            <a href="tel:8700291392" class="p-4 rounded-xl bg-vq-slate border border-vq-border hover:border-vq-cyan transition-all flex flex-col items-center text-center group">
+              <div class="w-10 h-10 rounded-full bg-vq-cyan/15 flex items-center justify-center text-vq-cyan mb-2 group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <span class="text-xs text-vq-steel font-mono">Direct Phone Call</span>
+              <span class="text-sm font-bold text-white font-mono mt-0.5">+91 8700291392</span>
+            </a>
+
+            <a href="https://wa.me/918700291392?text=Hello%20VORNQIS%20Team,%20I%20have%20a%20research%20inquiry." target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-vq-slate border border-vq-border hover:border-emerald-400 transition-all flex flex-col items-center text-center group">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/15 flex items-center justify-center text-emerald-400 mb-2 group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
+              </div>
+              <span class="text-xs text-vq-steel font-mono">WhatsApp Desk</span>
+              <span class="text-sm font-bold text-white font-mono mt-0.5">+91 8700291392</span>
+            </a>
+
+            <a href="mailto:contact@vornqis.com" class="p-4 rounded-xl bg-vq-slate border border-vq-border hover:border-vq-cyan transition-all flex flex-col items-center text-center group">
+              <div class="w-10 h-10 rounded-full bg-vq-teal/15 flex items-center justify-center text-vq-teal mb-2 group-hover:scale-110 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <span class="text-xs text-vq-steel font-mono">Direct Research Email</span>
+              <span class="text-xs font-bold text-white font-mono mt-1 break-all">contact@vornqis.com</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-vq-pitch border-t border-vq-border pt-16 pb-12 text-xs text-vq-steel">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-vq-border items-start">
+        
+        <!-- Brand Lockup -->
+        <div class="md:col-span-4 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xl font-bold tracking-[0.18em] uppercase chrome-heading font-display">VORNQIS</span>
+          </div>
+          <p class="text-[10px] tracking-[0.24em] font-bold text-vq-cyan uppercase font-mono">
+            RESEARCH & INSIGHTS
+          </p>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+            Turning Data Into Meaningful Insights. High-precision quantitative sampling, executive qualitative interviews, and predictive strategic modeling across B2B and B2C landscapes.
+          </p>
+          <div class="pt-1 text-slate-300 font-mono text-xs space-y-1">
+            <div>Desk: <a href="tel:8700291392" class="text-vq-cyan hover:underline">+91 8700291392</a></div>
+            <div>Email: <a href="mailto:contact@vornqis.com" class="text-vq-cyan hover:underline">contact@vornqis.com</a></div>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="md:col-span-4 space-y-3">
+          <h5 class="text-xs uppercase tracking-wider font-bold text-white font-mono">Quick Directory</h5>
+          <div class="grid grid-cols-2 gap-2 text-slate-400">
+            <a href="#solutions" class="hover:text-vq-cyan transition-colors">Solutions</a>
+            <a href="#audiences" class="hover:text-vq-cyan transition-colors">B2B & B2C Audiences</a>
+            <a href="#methodology" class="hover:text-vq-cyan transition-colors">Methodology</a>
+            <a href="#feasibility" class="hover:text-vq-cyan transition-colors">Feasibility Engine</a>
+            <a href="#quality" class="hover:text-vq-cyan transition-colors">Quality Standard</a>
+            <a href="#verticals" class="hover:text-vq-cyan transition-colors">Sectors</a>
+          </div>
+        </div>
+
+        <!-- Connect Channels -->
+        <div class="md:col-span-4 space-y-3 md:text-right">
+          <h5 class="text-xs uppercase tracking-wider font-bold text-white font-mono">Global Touchpoints</h5>
+          <div class="flex md:justify-end gap-3 text-slate-300 text-xs">
+            <a href="https://wa.me/918700291392" target="_blank" rel="noopener noreferrer" class="hover:text-vq-cyan">WhatsApp</a>
+            <span>•</span>
+            <a href="tel:8700291392" class="hover:text-vq-cyan">Direct Line</a>
+            <span>•</span>
+            <a href="mailto:contact@vornqis.com" class="hover:text-vq-cyan">Research Desk</a>
+          </div>
+          <p class="text-[11px] text-vq-muted pt-2">
+            Regional offices and field operational partners active across Americas, EMEA, and APAC.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+        <div>
+          © 2026 VORNQIS RESEARCH & INSIGHTS. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4 text-slate-400 font-mono">
+          <span>ESOMAR Standard</span>
+          <span>•</span>
+          <span>ISO 20252 Audited</span>
+          <span>•</span>
+          <span>GDPR Compliant</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Modal for Requesting Brief -->
+  <div id="projectModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="relative w-full max-w-lg glass-panel p-8 rounded-3xl border border-vq-cyan/40 shadow-glow-cyan">
+      
+      <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg bg-white/5">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="mb-6">
+        <span class="text-[10px] font-mono tracking-widest text-vq-cyan uppercase">VORNQIS Research Desk</span>
+        <h3 class="text-2xl font-bold text-white mt-1">Submit Research Specification</h3>
+        <p class="text-xs text-vq-metallic mt-1">Receive an audited methodology scope and quote directly.</p>
+      </div>
+
+      <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name</label>
+          <input required type="text" class="w-full bg-vq-slate border border-vq-border rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-vq-cyan">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Corporate Email</label>
+          <input required type="email" placeholder="you@company.com" class="w-full bg-vq-slate border border-vq-border rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-vq-cyan">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Target Spec & Quota</label>
+          <input required type="text" placeholder="e.g. 500 Enterprise IT buyers in APAC" class="w-full bg-vq-slate border border-vq-border rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-vq-cyan">
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-vq-cyan to-vq-teal text-vq-pitch hover:shadow-glow-cyan transition-all">
+          Generate Feasibility Scope
+        </button>
+
+        <p id="modalAlert" class="hidden text-center text-xs text-emerald-400 pt-2 font-mono">
+          ✓ Parameters sent to research@vornqis.com. We will respond within 4 hours.
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    // Navigation toggle for mobile screens
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Modal Controller
+    const projectModal = document.getElementById('projectModal');
+    function openModal() {
+      projectModal.classList.remove('hidden');
+    }
+    function closeModal() {
+      projectModal.classList.add('hidden');
+    }
+
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      const alertBox = document.getElementById('modalAlert');
+      alertBox.classList.remove('hidden');
+      setTimeout(() => {
+        closeModal();
+        alertBox.classList.add('hidden');
+      }, 2500);
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const alertBox = document.getElementById('contactFormAlert');
+      alertBox.classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('mainContactForm').reset();
+      }, 4000);
+    }
+
+    // Dynamic Feasibility & Quota Engine Calculations
+    let currentAudience = 'csuite';
+    const sampleSlider = document.getElementById('sampleSlider');
+    const sampleDisplay = document.getElementById('sampleDisplay');
+    const moeDisplay = document.getElementById('moeDisplay');
+    const turnaroundDisplay = document.getElementById('turnaroundDisplay');
+    const irDisplay = document.getElementById('irDisplay');
+    const feasibilityScore = document.getElementById('feasibilityScore');
+
+    const audienceConfigs = {
+      csuite: { 
+        name: 'C-Suite / B2B', 
+        ir: '~12% (Executive / Niche)', 
+        baseRate: 1.3,
+        score: '91/100'
+      },
+      hcp: { 
+        name: 'Healthcare / HCP', 
+        ir: '~18% (Rigorous Verification)', 
+        baseRate: 1.4,
+        score: '89/100'
+      },
+      tech: { 
+        name: 'Tech & SaaS', 
+        ir: '~35% (Enterprise Buyers & Devs)', 
+        baseRate: 0.9,
+        score: '96/100'
+      },
+      b2c: { 
+        name: 'B2C / General Consumer', 
+        ir: '~85% (Broad Population & Shoppers)', 
+        baseRate: 0.35,
+        score: '99/100'
+      },
+      genz: { 
+        name: 'Gen-Z & Millennial', 
+        ir: '~55% (Mobile-First / Social Cohorts)', 
+        baseRate: 0.5,
+        score: '98/100'
+      }
+    };
+
+    function setAudience(type, btn) {
+      currentAudience = type;
+      document.querySelectorAll('.audience-btn').forEach(b => {
+        b.className = 'audience-btn px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-vq-card text-slate-300 border border-vq-border hover:border-vq-cyan/40 transition-all text-center';
+      });
+      btn.className = 'audience-btn active px-2.5 py-2.5 rounded-xl text-xs font-semibold bg-vq-cyan text-vq-pitch border border-vq-cyan transition-all text-center';
+      updateCalculations();
+    }
+
+    function updateCalculations() {
+      const n = parseInt(sampleSlider.value);
+      sampleDisplay.textContent = `${n.toLocaleString()} Completes`;
+      
+      // Margin of error formula: 1.96 * sqrt(0.25 / n) * 100
+      const moe = (1.96 * Math.sqrt(0.25 / n) * 100).toFixed(1);
+      moeDisplay.textContent = `±${moe}%`;
+
+      const config = audienceConfigs[currentAudience];
+      irDisplay.textContent = config.ir;
+      if (feasibilityScore) {
+        feasibilityScore.textContent = config.score;
+      }
+
+      // Turnaround calculation based on N and audience difficulty factor
+      const daysMin = Math.max(2, Math.round((n / 380) * config.baseRate));
+      const daysMax = daysMin + (currentAudience === 'b2c' ? 1 : 2);
+      turnaroundDisplay.textContent = `${daysMin} - ${daysMax} Days`;
+    }
+
+    if (sampleSlider) {
+      sampleSlider.addEventListener('input', updateCalculations);
+    }
+
+    // Interactive Tab Switcher for the War-Room Deck
+    function switchTab(type, btn) {
+      document.querySelectorAll('.sim-tab').forEach(b => {
+        b.className = 'sim-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-vq-pitch text-slate-400 border border-vq-border hover:text-white transition-all';
+      });
+      btn.className = 'sim-tab px-3 py-1.5 rounded-lg text-xs font-semibold bg-vq-cyan text-vq-pitch border border-vq-cyan transition-all';
+
+      const content = document.getElementById('simContent');
+      if (type === 'pricing') {
+        content.innerHTML = `
+          <div class="bg-vq-pitch/80 p-5 rounded-2xl border border-vq-border space-y-3">
+            <div class="flex justify-between text-xs">
+              <span class="text-slate-300">Optimum Price-Point Acceptance (OPP)</span>
+              <span class="text-vq-cyan font-bold font-mono">$1,450 / node / yr</span>
+            </div>
+            <div class="w-full bg-slate-900 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-vq-cyan to-vq-teal h-full rounded-full transition-all duration-500" style="width: 78%"></div>
+            </div>
+            <div class="flex justify-between text-[11px] text-vq-steel font-mono">
+              <span>Point of Marginal Cheapness: $850</span>
+              <span>Point of Marginal Expensiveness: $2,100</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-vq-pitch/80 p-4 rounded-xl border border-vq-border">
+              <span class="text-[11px] text-vq-steel block font-mono">Revenue Optimization</span>
+              <span class="text-2xl font-bold font-display text-white">+28.4%</span>
+              <span class="text-[10px] text-emerald-400 block mt-1">At $1,450 subscription tier</span>
+            </div>
+            <div class="bg-vq-pitch/80 p-4 rounded-xl border border-vq-border">
+              <span class="text-[11px] text-vq-steel block font-mono">Elasticity Coefficient</span>
+              <span class="text-2xl font-bold font-display text-vq-cyan">-0.42</span>
+              <span class="text-[10px] text-vq-steel block mt-1">Inelastic enterprise core</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'adoption') {
+        content.innerHTML = `
+          <div class="bg-vq-pitch/80 p-5 rounded-2xl border border-vq-border space-y-3">
+            <div class="flex justify-between text-xs">
+              <span class="text-slate-300">Enterprise Migration Readiness</span>
+              <span class="text-vq-teal font-bold font-mono">73.6% High Propensity</span>
+            </div>
+            <div class="w-full bg-slate-900 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-vq-teal to-blue-500 h-full rounded-full transition-all duration-500" style="width: 73%"></div>
+            </div>
+            <div class="flex justify-between text-[11px] text-vq-steel font-mono">
+              <span>Primary Barrier: Integration Latency (41%)</span>
+              <span>Secondary Barrier: Security Audit (29%)</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-vq-pitch/80 p-4 rounded-xl border border-vq-border">
+              <span class="text-[11px] text-vq-steel block font-mono">Deployment Window</span>
+              <span class="text-2xl font-bold font-display text-white">Q3 - Q4</span>
+              <span class="text-[10px] text-emerald-400 block mt-1">Budget cycle alignment</span>
+            </div>
+            <div class="bg-vq-pitch/80 p-4 rounded-xl border border-vq-border">
+              <span class="text-[11px] text-vq-steel block font-mono">Trial Conversion</span>
+              <span class="text-2xl font-bold font-display text-vq-teal">54.2%</span>
+              <span class="text-[10px] text-vq-steel block mt-1">POC qualified intent</span>
+            </div>
+          </div>
+        `;
+      } else if (type === 'competitor') {
+        content.innerHTML = `
+          <div class="bg-vq-pitch/80 p-5 rounded-2xl border border-vq-border space-y-3">
+            <div class="flex justify-between text-xs">
+              <span class="text-slate-300">Category Vulnerability & Switching Risk</span>
+              <span class="text-blue-400 font-bold font-mono">31.8% Actively Seeking Alternates</span>
+            </div>
+            <div class="w-full bg-slate-900 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-blue-400 to-vq-cyan h-full rounded-full transition-all duration-500" style="width: 32%"></div>
+            </div>
+            <div class="flex justify-between text-[11px] text-vq-steel font-mono">
+              <span>Legacy Provider NPS: -8</span>
+              <span>VORNQIS Client Proposition NPS: +46</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-vq-pitch/80 p-4 rounded-xl border border-vq-border">
+              <span class="text-[11px] text-vq-steel block font-mono">Displacement Window</span>
+              <span class="text-2xl font-bold font-display text-white">6 Months</span>
+              <span class="text-[10px] text-emerald-400 block mt-1">Contract renewal window</span>
+            </div>
+            <div class="bg-vq-pitch/80 p-4 rounded-xl border border-vq-border">
+              <span class="text-[11px] text-vq-steel block font-mono">Key Moat Feature</span>
+              <span class="text-2xl font-bold font-display text-vq-cyan">API Speed</span>
+              <span class="text-[10px] text-vq-steel block mt-1">79% decision weight</span>
+            </div>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
