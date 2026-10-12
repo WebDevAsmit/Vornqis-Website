@@ -100,30 +100,8 @@
         <a href="#hero" class="flex items-center gap-3.5 group cursor-pointer focus:outline-none">
           <div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center">
             <div class="absolute inset-0 bg-vq-cyan/20 rounded-xl blur-md group-hover:bg-vq-cyan/40 transition-all"></div>
-            <!-- Custom Vector Recreation of the Selected Logo -->
-            <svg class="w-11 h-11 relative z-10 drop-shadow-[0_0_10px_rgba(0,242,254,0.7)]" viewBox="0 0 100 100" fill="none">
-              <defs>
-                <linearGradient id="headerCyan" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#00F2FE" />
-                  <stop offset="100%" stop-color="#0083B0" />
-                </linearGradient>
-                <linearGradient id="headerSilver" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FFFFFF" />
-                  <stop offset="100%" stop-color="#94A3B8" />
-                </linearGradient>
-              </defs>
-              <!-- Bar Chart Elements -->
-              <rect x="25" y="48" width="8" height="26" rx="2" fill="url(#headerCyan)" opacity="0.9"/>
-              <rect x="42" y="34" width="8.5" height="40" rx="2" fill="url(#headerSilver)"/>
-              <rect x="59" y="20" width="8.5" height="54" rx="2" fill="url(#headerSilver)"/>
-              <circle cx="63.2" cy="28" r="2.8" fill="#00F2FE" />
-              <!-- Stylized Monogram V Envelope -->
-              <path d="M 18 36 L 47 88 C 48.5 90.5 52.5 90.5 54 88 L 76 46" stroke="url(#headerCyan)" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M 52 87 L 68 56" stroke="url(#headerSilver)" stroke-width="5" stroke-linecap="round"/>
-              <!-- Surge Arrow Wave -->
-              <path d="M 22 66 Q 38 48 54 62 T 84 27" fill="none" stroke="url(#headerCyan)" stroke-width="5.2" stroke-linecap="round"/>
-              <polygon points="84,21 89,33 76,28" fill="#00F2FE"/>
-            </svg>
+            <!-- Logo image: keep logo.png in the same folder as this HTML file -->
+            <img src="logo.png" alt="VORNQIS logo" class="w-11 h-11 relative z-10 object-contain drop-shadow-[0_0_10px_rgba(0,242,254,0.7)]">
           </div>
           <div class="flex flex-col">
             <span class="text-xl sm:text-2xl font-extrabold tracking-[0.18em] uppercase chrome-heading font-display leading-none">
@@ -748,33 +726,31 @@
             </div>
           </form>
 
-          <!-- Direct Phone & WhatsApp Channels with user's verified contact numbers -->
-          <div class="mt-10 pt-8 border-t border-vq-border grid grid-cols-1 sm:grid-cols-3 gap-4">
-            
-            <a href="tel:8700291392" class="p-4 rounded-xl bg-vq-slate border border-vq-border hover:border-vq-cyan transition-all flex flex-col items-center text-center group">
-              <div class="w-10 h-10 rounded-full bg-vq-cyan/15 flex items-center justify-center text-vq-cyan mb-2 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              </div>
-              <span class="text-xs text-vq-steel font-mono">Direct Phone Call</span>
-              <span class="text-sm font-bold text-white font-mono mt-0.5">+91 8700291392</span>
+          <!-- EMAIL & WHATSAPP CONTACT BUTTONS -->
+          <div class="mt-10 pt-8 border-t border-vq-border flex flex-col sm:flex-row items-center justify-center gap-4">
+            <!-- EMAIL -->
+            <a
+              href="mailto:aeroanalyticsdata@gmail.com?subject=Market%20Research%20Project%20Enquiry"
+              class="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-bold text-xs uppercase tracking-widest bg-gradient-to-r from-vq-cyan to-vq-teal text-vq-pitch hover:shadow-glow-cyan transition-all duration-300"
+            >
+              Email Us
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
             </a>
 
-            <a href="https://wa.me/918700291392?text=Hello%20VORNQIS%20Team,%20I%20have%20a%20research%20inquiry." target="_blank" rel="noopener noreferrer" class="p-4 rounded-xl bg-vq-slate border border-vq-border hover:border-emerald-400 transition-all flex flex-col items-center text-center group">
-              <div class="w-10 h-10 rounded-full bg-emerald-500/15 flex items-center justify-center text-emerald-400 mb-2 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
-              </div>
-              <span class="text-xs text-vq-steel font-mono">WhatsApp Desk</span>
-              <span class="text-sm font-bold text-white font-mono mt-0.5">+91 8700291392</span>
+            <!-- WHATSAPP -->
+            <a
+              href="https://wa.me/9942593270"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 px-7 py-4 rounded-xl font-bold text-xs uppercase tracking-widest text-slate-200 glass-panel border border-vq-border hover:text-white hover:border-emerald-400/50 transition-all duration-300"
+            >
+              WhatsApp
+              <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+              </svg>
             </a>
-
-            <a href="mailto:contact@vornqis.com" class="p-4 rounded-xl bg-vq-slate border border-vq-border hover:border-vq-cyan transition-all flex flex-col items-center text-center group">
-              <div class="w-10 h-10 rounded-full bg-vq-teal/15 flex items-center justify-center text-vq-teal mb-2 group-hover:scale-110 transition-transform">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              </div>
-              <span class="text-xs text-vq-steel font-mono">Direct Research Email</span>
-              <span class="text-xs font-bold text-white font-mono mt-1 break-all">contact@vornqis.com</span>
-            </a>
-
           </div>
 
         </div>
